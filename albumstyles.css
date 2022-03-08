@@ -1,0 +1,438 @@
+.main-Container {
+  max-width: 100vw !important;
+  position: relative;
+}
+
+
+body > .container-fluid {
+ 
+  background-repeat: no-repeat;
+  color: rgba(255, 255, 255, 0.842) !important;
+}
+
+.albumTextContainer {
+  min-width: 100px;
+
+ 
+
+} 
+.arrowsAndDropdown {
+  position: relative;
+}
+
+.dropdown {
+  position: absolute;
+  top: 0.4rem;
+  right: 1rem;
+}
+
+h4 {
+  color: white;
+}
+
+
+
+#profilePic {
+  width: 30px !important;
+  height: 30px !important;
+  border-radius: 50%;
+}
+
+
+.con1{
+  position: relative;
+  width: 83vw;
+  height: 88vh;
+  overflow-x: hidden;
+}
+.con2{
+  position: relative;
+  
+  width: 17vw;
+  height: 88vh;
+  overflow: hidden;
+  background-color: black;
+    
+}
+
+.buttonBox {
+  width: 2.4rem;
+  height: 2.4rem;
+  background-color: #00d95f;
+  border-radius: 50%;
+  position: absolute;
+  left: 1.5rem;
+  top: 1.5rem;
+  position: relative;
+  display: flex;
+  flex-direction: row;
+}
+
+.button.play {
+  width: 0.2rem;
+  height: 0.2rem;
+  border-style: solid;
+  border-width: 0.75rem 0rem 0.75rem 1.5rem;
+  border-color: transparent transparent transparent white;
+  box-sizing: border-box;
+  background-color: transparent;
+  position: absolute;
+  left: 0.70rem;
+  top: 0.4rem;
+  transition: all ease-in 0.01s;
+}
+
+
+#album-body {
+  background-color: transparent !important;
+}
+
+.footer {
+  height: 10vh;
+  background-color: #171818;
+  position: sticky;
+  bottom: 0;
+
+}
+
+.footer-icon1 {
+  color: aliceblue;
+  font-size: 1rem;
+  opacity: 0.5;
+}
+
+.footer-icon2 {
+  color: aliceblue;
+  font-size: 1.5rem;
+  opacity: 0.7;
+}
+
+.play {
+  font-size: 2rem;
+  color: aliceblue;
+}
+
+.play:hover {
+  color: darkgreen;
+  cursor: pointer;
+}
+
+.footer-play-bar {
+  height: 6%;
+  width: 35vw;
+
+  border-radius: 100px;
+  box-sizing: border-box;
+  background-color: aliceblue;
+}
+
+.footer-stop {
+  height: 6px;
+  width: 200px;
+  background-color: #171818;
+  border: 1px solid aliceblue;
+  border-radius: 100px;
+}
+
+.number-play {
+  color: aliceblue;
+}
+
+.volume {
+  height: 0.6vh;
+  width: 5vw;
+  background-color: aliceblue;
+  border-radius: 100px;
+}
+
+
+
+.topdropdwon:hover{
+  background-color: rgba(87, 81, 81, 0.575);
+  color: rgb(0, 0, 0);
+  
+}
+.btn-btn:hover {
+  background-color: rgba(255, 255, 255, 0.596);
+  color: rgb(0, 0, 0);
+}
+.btn-btn  {
+  height: auto;
+  background-color: rgb(0, 0, 0, 0.5);
+  border-radius: 100px;
+  width: 40px;
+}
+
+.previous,
+.next {
+  background-color: #0a0a0a;
+  color: white;
+} 
+
+.round {
+  border-radius: 08%;
+} 
+#album-section > .container-fluid > .row > .col-4 {
+  padding-right: 0px;
+}
+#album-section > .container-fluid > .row > .col-4 > img {
+  max-width: 100%;
+  min-width: 150px;
+  min-height: 150px;
+  max-height: 100%;
+
+  margin-top: 25px;
+  margin-left: 10px;
+  position: absolute;
+  background-color: #571f47;
+}
+#album-section > .container-fluid > .row > .col-10 {
+  margin-top: 150px;
+  margin-bottom: 30px;
+  padding-left: 0px;
+  padding-right: 0%;
+}
+
+#table-section > div {
+  background-color: #20091c;
+  
+}
+
+.bi-bi {
+  padding-left: 15px;
+}
+.bi-stopwatch {
+  padding-left: 0;
+}
+
+#table-section {
+  background: rgb(14, 14, 14);
+}
+#table-container {
+  padding: 0px;
+}
+
+#table-container > table {
+  background-color: black;
+}
+#table-container > table > tbody > tr:hover {
+  background-color: rgb(202, 28, 135);
+}
+
+#table-container > table > thead {
+  background-color: #2c262c4f;
+}
+#heart2 {
+  position: absolute;
+  left: 1.5rem;
+  top: 1.8rem;
+  padding-left: 15px;
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  display: inline;
+}
+
+/* header */
+#image-align img {
+  position: relative !important;
+  left: 0;
+  top: 20px;
+  bottom: 10px;
+  object-fit: cover;
+  max-width: 80% !important;
+  max-height: 80% !important;
+}
+
+.albumTextContainer {
+  position: relative;
+  
+  right: 85px;
+}
+
+.display-7{
+  position: absolute;
+  left: 1.5rem;
+  bottom: 0rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+td {
+  transition: 0.1s ease;
+} 
+
+ td:hover {
+ 
+  -webkit-transform: scale(1.1);
+  -ms-transform: scale(1.1);
+  transform: scale(1.0);
+} 
+
+#album-section > .container-fluid > .row > .col-4{
+
+}
+
+
+
+
+@media only screen and (max-width:850px) {
+  .rmusic{
+    display: none !important;
+  }
+  .lmusic{
+    display: none !important;
+  }
+  @media only screen and (max-width:565px) {
+    .albumTextContainer strong{
+      width: 300px;
+
+  text-overflow: ellipsis;
+            overflow: hidden;
+            white-space: nowrap;
+      font-size: 15px !important;
+}
+
+
+
+.music-player{
+  position: absolute;
+  width:100vw;
+  height: 12vh;
+  background-color:  rgb(24, 24, 24) !important;
+  overflow-y: hidden;
+  overflow-x: hidden;
+}
+.p-music{
+  color: rgba(248, 248, 248, 0.459);
+}
+#slider{
+  -webkit-appearance: unset;
+  width: 80vw;
+  height: 4px;
+
+}
+#slider2{
+  -webkit-appearance: unset;
+  height: 4px;
+
+}
+@media (max-width:576px) {
+  body h1 {
+      color: yellow !important;
+  }
+
+  .left-sidebar,
+  .artist-page-bottom-right,
+  .artist-page-bottom-left td:nth-child(5),
+  .right-div,
+  .heart-grid-icon,
+  .number-play {
+      display: none !important;
+  }
+
+  .footer {
+      flex-direction: column;
+      height: 100%;
+  }
+
+  .img-footer img {
+      height: 30px !important;
+  }
+
+}
+
+@media (min-width:577px) and (max-width:992px) {
+  body h1 {
+      color: tomato !important;
+  }
+
+
+
+  .artist-page-bottom-left td:nth-child(2) {
+      width: 10%;
+  }
+
+  .sidebar-bottom {
+      white-space: wrap;
+      overflow: visible;
+      text-overflow: ellipsis;
+  }
+
+  #veryright {
+      flex-direction: row !important;
+  }
+
+  .left-sidebar>div:not(.sidebar-second-block),
+  .right-div,
+  .footer-icon1,
+  .text-footer p {
+      display: none !important;
+  }
+
+  .sidebar-second-block {
+      margin-top: 2rem;
+  }
+
+  body {
+      position: relative;
+  }
+
+  .left-sidebar {
+      width: 30vw;
+  }
+
+  .footer {
+      flex-direction: column;
+      justify-content: space-evenly !important;
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 23vw;
+      height: 35vh;
+  }
+
+  body {
+      background-color: #171818;
+  }
+
+  .divImgWrapper {
+    height: 300px;
+    width: 300px;
+  }
+
+  .left-div,
+  .middle-div {
+      flex-direction: column;
+      width: 90%;
+      align-items: center;
+      text-align: center;
+      justify-content: center;
+  }
+
+  .footer-stop {
+      width: 22px;
+  }
+
+  .footer-play-bar {
+      width: 13vw;
+  }
+
+  .img-footer img {
+      height: 100px !important;
+      margin: auto;
+  }
+
+  .text-footer {
+      text-align: center;
+  }
+}
+
+
+.th-style {
+  display: flex;
+  justify-content: space-between;
+}
+  
+  

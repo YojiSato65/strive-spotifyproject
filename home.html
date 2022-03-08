@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
+        integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,600;0,700;1,500&display=swap"
+        rel="stylesheet">
+    <script src="https://kit.fontawesome.com/ae2c658fe7.js" crossorigin="anonymous"></script>
+    <title>Document</title>
+
+    <style>
+        * {
+            font-family: 'Montserrat', sans-serif;
+            color: aliceblue;
+
+        }
+
+        main {
+            min-height: 90vh;
+        }
+
+
+        .left-sidebar {
+            background-color: black;
+            width: 15vw;
+        }
+
+        .sidebar-top img {
+            width: 50px;
+        }
+
+        .sidebar-top h3 {
+            color: white;
+            vertical-align: middle;
+            font-size: 1.5rem;
+            margin-bottom: 0;
+        }
+
+        .left-sidebar div {
+            pp color: var(--text-dark);
+            font-size: 0.7rem;
+        }
+
+        .left-sidebar>div:not(.sidebar-top) {
+            padding: 0.5rem;
+        }
+
+        .left-sidebar>div:not(.sidebar-top) div {
+            padding: 0.4rem;
+        }
+
+        .sidebar-second-block,
+        .sidebar-third-block {
+            font-weight: 600;
+        }
+
+        .left-sidebar i {
+            font-size: 1rem;
+        }
+
+        .sidebar-bottom i {
+            font-size: 0.9rem;
+        }
+
+        .sidebar-second-block .slidebar-selected {
+            background-color: #282828;
+            border-radius: 3px;
+            color: white;
+        }
+
+        h3 {
+            color: azure;
+            font-weight: 700;
+        }
+
+        .card-text,
+        .card-title {
+            text-overflow: ellipsis;
+            overflow: hidden;
+            white-space: nowrap;
+            max-width: 120px;
+            min-width: 120px;
+
+        }
+
+        .card1 h5.card-title {
+            color: azure;
+        }
+
+        .card {
+            transition: all .2s ease-in-out;
+
+        }
+
+        .second-card-row {
+            max-width: 150px;
+        }
+
+        .card:hover {
+            transform: scale(1.1);
+            background-color: #434444;
+            cursor: pointer;
+        }
+
+        .container-fluid {
+            background: rgb(0, 0, 0);
+            background: linear-gradient(0deg, rgba(0, 0, 0, 1) 60%, rgb(82, 9, 9) 100%);
+        }
+
+        .fa-circle-chevron-left {
+            font-size: 2rem;
+            color: #171818;
+        }
+
+        .fa-circle-chevron-right {
+            font-size: 2rem;
+            opacity: 0.7;
+            color: #171818;
+        }
+
+        p {
+            color: darkgray;
+        }
+
+        .see {
+            color: darkgrey;
+            font-weight: 700
+        }
+
+        .card {
+            background: #171818;
+        }
+
+        .card1 {
+            background-color: #434444;
+            background: rgba(17, 18, 18, 0.555)
+        }
+
+        .button {
+            height: 32px;
+            width: 160px;
+            background: #171818;
+            border-radius: 100px;
+            box-sizing: border-box;
+            color: white;
+            font-weight: 600;
+        }
+
+        .fa-caret-down {
+            font-size: 1rem;
+        }
+
+        #img5 {
+            height: 80px;
+            width: 80px;
+            border-top-left-radius: 5%;
+            border-bottom-right-radius: 5%;
+            opacity: 1;
+        }
+
+        .footer {
+            height: 10vh;
+            background-color: #171818;
+            position: sticky;
+            bottom: 0;
+
+        }
+
+        .footer-icon1 {
+            color: aliceblue;
+            font-size: 1rem;
+            opacity: 0.5;
+        }
+
+        .footer-icon2 {
+            color: aliceblue;
+            font-size: 1.5rem;
+            opacity: 0.7;
+        }
+
+        .play {
+            font-size: 2rem;
+            color: aliceblue;
+        }
+
+        .play:hover {
+            color: darkgreen;
+            cursor: pointer;
+        }
+
+        .footer-play-bar {
+            height: 6%;
+            width: 35vw;
+
+            border-radius: 100px;
+            box-sizing: border-box;
+            background-color: aliceblue;
+        }
+
+        .footer-stop {
+            height: 6px;
+            width: 200px;
+            background-color: #171818;
+            border: 1px solid aliceblue;
+            border-radius: 100px;
+        }
+
+        .number-play {
+            color: aliceblue;
+        }
+
+        .volume {
+            height: 0.6vh;
+            width: 5vw;
+            background-color: aliceblue;
+            border-radius: 100px;
+        }
+
+        @media (max-width:576px) {
+            body h1 {
+                color: yellow !important;
+            }
+
+            .left-sidebar,
+            .artist-page-bottom-right,
+            .artist-page-bottom-left td:nth-child(5),
+            .right-div,
+            .heart-grid-icon,
+            .number-play {
+                display: none !important;
+            }
+
+            .footer {
+                flex-direction: column;
+                height: 100%;
+            }
+
+            .img-footer img {
+                height: 30px !important;
+            }
+
+        }
+
+        @media (min-width:577px) and (max-width:992px) {
+            body h1 {
+                color: tomato !important;
+            }
+
+
+
+            .artist-page-bottom-left td:nth-child(2) {
+                width: 10%;
+            }
+
+            .sidebar-bottom {
+                white-space: wrap;
+                overflow: visible;
+                text-overflow: ellipsis;
+            }
+
+            #veryright {
+                flex-direction: row !important;
+            }
+
+            .left-sidebar>div:not(.sidebar-second-block),
+            .right-div,
+            .footer-icon1,
+            .text-footer p {
+                display: none !important;
+            }
+
+            .sidebar-second-block {
+                margin-top: 2rem;
+            }
+
+            body {
+                position: relative;
+            }
+
+            .left-sidebar {
+                width: 30vw;
+            }
+
+            .footer {
+                flex-direction: column;
+                justify-content: space-evenly !important;
+                position: fixed;
+                bottom: 0;
+                left: 0;
+                width: 23vw;
+                height: 35vh;
+            }
+
+            body {
+                background-color: #171818;
+            }
+
+            .left-div,
+            .middle-div {
+                flex-direction: column;
+                width: 90%;
+                align-items: center;
+                text-align: center;
+                justify-content: center;
+            }
+
+            .footer-stop {
+                width: 22px;
+            }
+
+            .footer-play-bar {
+                width: 13vw;
+            }
+
+            .img-footer img {
+                height: 100px !important;
+                margin: auto;
+            }
+
+            .text-footer {
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <main class="d-flex">
+        <!-- left sidebar -->
+        <div class="container left-sidebar">
+            <div class="sidebar-top py-3">
+                <div>
+                    <img src="./album-img/spotify-logo.jpeg" alt="spotify logo">
+                    <h3 class="d-inline-block">Spotify</h3>
+                </div>
+            </div>
+            <div class="sidebar-second-block">
+                <div class="slidebar-selected"><i class="fa-solid fa-house mr-2"></i>
+                    Home</div>
+                <div><i class="fa-solid fa-magnifying-glass mr-2"></i>
+                    Search</div>
+                <div><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                        class="bi bi-bookshelf mr-2" viewBox="0 0 16 16">
+                        <path
+                            d="M2.5 0a.5.5 0 0 1 .5.5V2h10V.5a.5.5 0 0 1 1 0v15a.5.5 0 0 1-1 0V15H3v.5a.5.5 0 0 1-1 0V.5a.5.5 0 0 1 .5-.5zM3 14h10v-3H3v3zm0-4h10V7H3v3zm0-4h10V3H3v3z" />
+                    </svg>
+                    Your Library
+                </div>
+            </div>
+            <div class="sidebar-third-block">
+                <div>
+                    <i class="fa-solid fa-square-plus mr-2"></i>Create Playlist
+                </div>
+                <div><i class="fa-regular fa-heart mr-2"></i>Liked Songs
+                </div>
+            </div>
+            <div class="sidebar-bottom">
+                <div>Funky Heavy Bluesy</div>
+                <div>Your Top Songs 2020</div>
+                <div>In Love With You - Erykah Badu</div>
+                <div>This Is Rod Stewart</div>
+                <div>FRANCHISE With Young Thug</div>
+                <div>Your Top Songs 2019</div>
+                <div>Pallegio</div>
+                <div>This Is Joe Bonamassa</div>
+                <div>Jun19</div>
+                <div>Jack 30th Party2</div>
+                <div>Jack 30th Party</div>
+                <div>This Is Opeth</div>
+                <div>Metal Ballads</div>
+                <div>New Playlist</div>
+                <div>Your Top Songs 2018</div>
+                <div>Jazz Classics Blue Note Edition</div>
+                <div>
+                    <i class="fa-solid fa-circle-arrow-down"></i>
+                    Install App
+                </div>
+            </div>
+        </div>
+
+        <div class="container-fluid pl-5 pr-5">
+            <div class="d-flex justify-content-between header">
+                <div class="icon"> <i class="fa-solid fa-circle-chevron-left mr-3 mt-3"></i><i
+                        class="fa-solid fa-circle-chevron-right"></i></div>
+                <div class="drop mt-3">
+                    <div class="button d-flex align-items-center">
+                        <div class=" mr-1">
+                            <img src="./album-img/pp.jpg" style="height: 30px; border-radius: 50%;">
+                            Madu Auler
+                            <i class="fa-solid fa-caret-down pl-1"></i>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <h3 class="mt-5 mb-4">Good Morning</h3> <button class="btn btn-primary my-1 mx-auto"
+                onclick="loadMusic()">Load Albuns</button>
+            <div class="row " id="card-Wrapper">
+            </div>
+
+
+
+            <div class="d-flex justify-content-between align-items-end">
+                <div>
+                    <h3 class="mt-5 mb-4">Recently Played</h3>
+                </div>
+                <div>
+                    <p class="mt-5 mb-4 see" style="vertical-align: bottom;">SEE ALL</p>
+                </div>
+            </div>
+            <button class="btn btn-primary my-1 mx-auto" onclick="loadMusic2()">Load Albuns</button>
+            <div class="row" id="secondCard-wrapper">
+            </div>
+            <div class="d-flex justify-content-between align-items-end">
+                <div class="mt-5">
+                    <h3>Shows to try</h3>
+                    <p class="mb-4">Podcasts we think you'll get hooked on</p>
+                </div>
+                <div>
+                    <p class="mt-5 mb-4 see" style="vertical-align: bottom;">SEE ALL</p>
+                </div>
+            </div>
+            <button class="btn btn-primary my-1 mx-auto" onclick="loadMusic3()">Load Albuns</button>
+            <div class="row" id="secondCard-wrapper">
+
+                <div class="row" id="thirdRow-wrapper">
+
+                </div>
+            </div>
+    </main>
+    <footer class="footer mt-auto py-3 d-flex justify-content-between align-items-center">
+        <div class="left-div ml-5 d-flex align-items-center">
+            <div class="img-footer mr-2"> <img src="./album-img/album1.jpg" alt="" style="height: 65px;"></div>
+            <div class="text-footer mr-5 ">
+                <h6>Music Playing <br> Artist</h6>
+            </div>
+            <div><i class="fa-solid fa-heart mr-3 footer-icon1" id="heart" onclick="likeButton(this)"></i>
+                <i class="fa-solid fa-table-cells-large footer-icon1"></i>
+            </div>
+        </div>
+        <div class="middle-div text-center">
+            <div class="d.flex icons align-items-center justify-content-center">
+                <i class="fa-solid fa-shuffle footer-icon1 mr-3"></i>
+                <i class="fa-solid fa-backward-step footer-icon2 mr-3"></i>
+                <i class="fa-solid fa-circle-play mr-3 play" onclick="playButton(this)"></i>
+                <i class="fa-solid fa-forward-step footer-icon2 mr-3"></i>
+                <i class="fa-solid fa-repeat footer-icon1"></i>
+
+            </div>
+            <div class="d-flex align-items-center">
+                <div class="number-play mr-2">0:12</div>
+                <div class="footer-play-bar">
+                    <div class="footer-stop"></div>
+                </div>
+                <div class="number-play ml-2">3:34</div>
+            </div>
+        </div>
+        <div class="right-div mr-5 d-flex align-items-center">
+            <div><i class="fa-solid fa-grip-lines mr-3 footer-icon1"></i></div>
+            <div><i class="fa-solid fa-desktop mr-3 footer-icon1"></i></div>
+            <div><i class="fa-solid fa-volume-high mr-3 footer-icon1"></i></div>
+            <div class="volume"></div>
+        </div>
+    </footer>
+
+
+
+    <script>
+
+        function playButton(x) {
+            x.classList.toggle("fa-circle-stop");
+        }
+
+
+        function likeButton(x) {
+            x.classList.toggle("text-success");
+        }
+
+        const cardWrapper = document.querySelector("#card-Wrapper")
+        function loadMusic() {
+            fetch("https://striveschool-api.herokuapp.com/api/deezer/search?q=eminem")
+                .then(response => {
+                    return response.json()
+                })
+                .then(musics => {
+                    console.log(musics)
+                    console.log(musics.data)
+                    cardWrapper.innerHTML = musics.data
+                        .map(
+                            (music) =>
+                                `   <div class="col">
+                    <div class="card second-card-row">
+                        <a href="./albumpage.html?id=${music.album.id}"><img src=${music.album.cover} alt="album1.jpg" 
+                        <div class="card-body">
+                            <h5 class="card-title">${music.album.title}</h5>
+                            <p class="card-text">${music.title}z</p>
+
+                        </div>
+                    </div>
+                </div>
+                   `
+                        )
+                        .join("")
+                })
+                .catch(error => {
+                    console.error(error)
+                })
+        }
+        const secondCardWrapper = document.querySelector("#secondCard-wrapper")
+        function loadMusic2() {
+            fetch("https://striveschool-api.herokuapp.com/api/deezer/search?q=metallica")
+                .then(response => {
+                    return response.json()
+                })
+                .then(musics => {
+                    console.log(musics)
+                    console.log(musics.data)
+                    secondCardWrapper.innerHTML = musics.data
+                        .map(
+                            (music) =>
+                                `   <div class="col">
+                    <div class="card second-card-row">
+                        <a href="./albumpage.html?id=${music.album.id}"><img src=${music.album.cover} alt="album1.jpg" 
+                        <div class="card-body">
+                            <h5 class="card-title">${music.album.title}</h5>
+                            <p class="card-text">${music.title}z</p>
+
+                        </div>
+                    </div>
+                </div>
+                   `
+                        )
+                        .join("")
+                })
+                .catch(error => {
+                    console.error(error)
+                })
+        }
+        const thirdCardWrapper = document.querySelector("#thirdRow-wrapper")
+        function loadMusic3() {
+            fetch("https://striveschool-api.herokuapp.com/api/deezer/search?q=behemoth")
+                .then(response => {
+                    return response.json()
+                })
+                .then((musics) => {
+                    console.log(musics)
+                    console.log(musics.data)
+                    thirdCardWrapper.innerHTML = musics.data
+                        .map(
+                            (music) =>
+                                `   <div class="col">
+                    <div class="card second-card-row">
+                        <a href="./albumpage.html?id=${music.album.id}"><img src=${music.album.cover} alt="album1.jpg" 
+                        <div class="card-body">
+                            <h5 class="card-title">${music.album.title}</h5>
+                            <p class="card-text">${music.title}z</p>
+
+                        </div>
+                    </div>
+                </div>
+                   `
+                        )
+                        .join("")
+                })
+                .catch(error => {
+                    console.error(error)
+                })
+        }
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

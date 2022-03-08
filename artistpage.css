@@ -1,0 +1,370 @@
+:root {
+    --text-dark: rgb(200,200,200)
+}
+
+/* Left sidebar - from here */
+.left-sidebar {
+    background-color: #171818;
+    width: 20vw;
+}
+.sidebar-top img {
+    width: 50px;
+}
+.sidebar-top h3 {
+    color: white;
+    vertical-align: middle;
+    font-size: 1.5rem;
+    margin-bottom: 0;
+}
+.left-sidebar div {
+    color: var(--text-dark);
+    font-size: 0.7rem;
+}
+.left-sidebar > div:not(.sidebar-top) {
+    padding: 0.5rem;
+}
+.left-sidebar > div:not(.sidebar-top) div {
+    padding: 0.4rem;
+}
+.sidebar-second-block, .sidebar-third-block {
+    font-weight: 600;
+}
+.left-sidebar i {
+    font-size: 1rem;
+}
+.sidebar-bottom i {
+    font-size: 0.9rem;
+}
+.sidebar-bottom {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.sidebar-second-block .slidebar-selected {
+    background-color: #282828;
+    border-radius: 3px;
+    color: white;
+}
+/* Left sidebar - until here */
+
+/* Artist page - main section - from here */
+.artist-page-top {
+    width: 100%;
+    background-image: url('queen3.jpeg');
+    object-position: center;
+    object-fit: cover;
+    position: relative;
+    padding-left: 0;
+    padding-right: 0;
+    background-size: 100%;
+}
+.artist-page-top::before {
+    content: '';
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    position: absolute;
+    background-color: rgb(0, 0, 0, 0.3);
+}
+.artist-page-top div:first-child div:first-child i {
+    color: white;
+    font-size: 1rem;
+}
+.artist-page-top .front-elements {
+    z-index: 1;
+}
+.artist-page-top button img {
+    width: 20px;
+}
+.artist-page-top div span {
+    color: var(--text-dark);
+}
+.artist-page-top div:first-child button {
+    border-radius: 50px;
+    background-color: black;
+    border-color: black;
+} 
+.artist-page-top div:nth-child(2) {
+    color: white;
+}
+.front-elements {
+    opacity: 1;
+}
+h1 {
+    font-size: 5rem;
+    font-weight: 700;
+}
+.verified-icon {
+    width: 1.2rem;
+    vertical-align: middle;
+}
+
+.artist-page-top div:nth-child(2) div:nth-child(1) {
+    font-size: 0.8rem;
+}
+.artist-page-top div:nth-child(2) div:nth-child(3) {
+    font-size: 0.9rem;
+}
+
+.fa-circle-pause {
+    font-size: 3.5rem;
+    color: #1AB954;
+    position: relative;
+}
+.fa-pause {
+    font-size: 1.7rem;
+    color: white;
+    position: relative;
+    background-color: #1AB954;
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+}
+
+.artist-page-bottom {
+    background: rgb(89,89,89);
+background: linear-gradient(180deg, rgb(116, 116, 116) 0%, rgba(40,40,40,1) 40%, rgba(0,0,0,1) 100%);
+}
+.artist-page-bottom h5 {
+    color: white;
+    font-weight: 700;
+}
+.artist-page-top .artist-page-bottom i + button {
+    border: 0.5px solid rgb(200,200,200);
+    border-radius: 3px;
+    color: white;
+    background-color:rgb(0, 0, 0, 0);
+    height: 1.5rem;
+    font-size: 0.7rem;
+    font-weight: 700;
+}
+.artist-page-bottom i + button + h6 {
+    color: var(--text-dark);
+}
+.artist-page-bottom td img {
+    height: 35px;
+}
+.artist-page-bottom-left table, .artist-page-bottom-left th, .artist-page-bottom-left td {
+font-size: 0.8rem;
+background-color: rgb(0, 0, 0, 0);
+border: none;
+}
+.artist-page-bottom-left tr th, .artist-page-bottom-left tr td:nth-of-type(3), .artist-page-bottom-left tr td:nth-of-type(4) {
+font-size: 0.8rem;
+color: var(--text-dark);
+}
+.artist-page-bottom-left th, .artist-page-bottom-left td {
+    vertical-align: middle;
+    padding-right: 0;
+}
+.popular .track-1, .bi-activity {
+    color: #1AB954;
+}
+.artist-page-bottom-left .popular-releases .track-1 {
+    color: white;
+}
+.artist-page-bottom-left p {
+    font-size: 0.7rem;
+    font-weight: 600;
+    color: var(--text-dark);
+}
+.artist-page-bottom-right img {
+    height: 60px;
+}
+#queen-icon {
+    width: 20px;
+    height: 20px;
+    object-position: center;
+    object-fit: cover;
+    border-radius: 50px;
+}
+#veryright div:nth-of-type(odd) {
+    color: var(--text-dark);
+    font-size: 0.7rem;
+}
+#veryright div:nth-of-type(even) {
+    color: white;
+    font-weight: 700;
+    font-size: 0.8rem;
+}
+.artist-page-bottom-left th {
+    width: 3%;
+}
+.artist-page-bottom-left td:nth-child(2) {
+    width: 8%;
+}
+.artist-page-bottom-left td:nth-child(3) {
+    width: 31%;
+}
+.artist-page-bottom-left td:nth-child(4) {
+    width: 30%;
+    text-align: right;
+    color: var(--text-dark);
+}
+.artist-page-bottom-left td:nth-child(5) {
+    width: 30%;
+    text-align: right;
+    color: var(--text-dark);
+}
+tr:hover {
+    background-color: rgb(112, 107, 107);
+    opacity: 1;
+}
+/* Artist page - main section - until here */
+
+/* Footer from here */
+.footer {
+    height: 10vh;
+    background-color: #171818;
+    position: sticky;
+    bottom: 0;
+    z-index: 2;
+}
+
+.footer-icon1 {
+    color: aliceblue;
+    font-size: 1rem;
+    opacity: 0.5;
+}
+
+.footer-icon2 {
+    color: aliceblue;
+    font-size: 1.5rem;
+    opacity: 0.7;
+}
+
+.play {
+    font-size: 2rem;
+    color: aliceblue;
+}
+
+.footer-play-bar {
+    height: 6%;
+    width: 35vw;
+
+    border-radius: 100px;
+    box-sizing: border-box;
+    background-color: aliceblue;
+}
+
+.footer-stop {
+    height: 6px;
+    width: 200px;
+    background-color: #171818;
+    border: 1px solid aliceblue;
+    border-radius: 100px;
+}
+
+.number-play {
+    color: aliceblue;
+}
+
+.volume {
+    height: 0.6vh;
+    width: 5vw;
+    background-color: aliceblue;
+    border-radius: 100px;
+}
+
+.footer-text {
+    color: aliceblue;
+    font-size: 0.7rem;
+    margin-bottom: 0;
+    /* font-family: 'Montserrat', sans-serif; */
+}
+.footer-text + p {
+    color: var(--text-dark);
+    font-size: 0.6rem;
+    margin-bottom: 0;
+}
+/* Footer until here */
+
+/* Responsive */
+@media (max-width:576px) {
+    /* body h1 {
+        color: yellow !important;
+    } */
+
+    .left-sidebar, .artist-page-bottom-right, .artist-page-bottom-left td:nth-child(5), .right-div, .heart-grid-icon, .number-play {
+        display: none !important;
+    }
+    .footer {
+        flex-direction: column;
+        height: 100%;
+    }
+    .img-footer img {
+        height: 30px !important;
+    }
+
+}
+@media (min-width:577px) and (max-width:992px) {
+    /* body h1 {
+        color: tomato !important;
+    } */
+    .artist-page-top {
+        /* min-height: 50vh; */
+        width: 100%;
+        background-image: url('queen3.jpeg');
+        object-position: center;
+        object-fit: cover;
+        position: relative;
+        padding-left: 0;
+        padding-right: 0;
+        background-size: 150%;
+        background-position: 50% 0;
+    }
+    .artist-page-bottom-left td:nth-child(2) {
+        width: 10%;
+    }
+    .sidebar-bottom {
+        white-space: wrap;
+        overflow: visible;
+        text-overflow: ellipsis;
+    }
+    .left-sidebar > div:not(.sidebar-second-block), .right-div, .footer-icon1, .text-footer p {
+        display: none !important;
+    }
+    .sidebar-second-block {
+        margin-top: 2rem;
+    }
+    body {
+        position: relative;
+    }
+    .left-sidebar {
+        width: 30vw;
+    }
+    .footer {
+        flex-direction: column;
+        justify-content: space-evenly !important;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 23.68vw;
+        height: 35vh;
+    }
+    .left-div, .middle-div {
+        flex-direction: column;
+        width: 90%;
+    }
+    .footer-stop {
+        width: 22px;
+    }
+    .footer-play-bar {
+        width: 13vw;
+    }
+    .img-footer img {
+        height: 150px !important;
+    }
+    .text-footer {
+        text-align: center;
+    }
+    .artist-pick {
+        width: 150px;
+    }
+}
+
+/* for JS from here */
+.text-success {
+    opacity: 1;
+}

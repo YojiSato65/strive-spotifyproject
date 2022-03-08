@@ -1,0 +1,345 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no initial-scale=1.0"">
+
+    <!-- Bootstrap CSS -->
+    <link rel=" stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
+        integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Google Fonts CSS -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,600;0,700;1,500&display=swap"
+        rel="stylesheet">
+    <title>Spotify-Artist</title>
+    <link rel="stylesheet" href="artistpage.css">
+</head>
+
+<body>
+    <main class="d-flex">
+        <!-- left sidebar -->
+        <div class="container left-sidebar">
+            <div class="sidebar-top py-3">
+                <div>
+                    <img src="spotify-logo.jpeg" alt="spotify logo">
+                    <h3 class="d-inline-block">Spotify</h3>
+                </div>
+            </div>
+            <div class="sidebar-second-block">
+                <div class="slidebar-selected"><i class="fa-solid fa-house mr-2"></i>
+                    Home</div>
+                <div><i class="fa-solid fa-magnifying-glass mr-2"></i>
+                    Search</div>
+                <div><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                        class="bi bi-bookshelf mr-2" viewBox="0 0 16 16">
+                        <path
+                            d="M2.5 0a.5.5 0 0 1 .5.5V2h10V.5a.5.5 0 0 1 1 0v15a.5.5 0 0 1-1 0V15H3v.5a.5.5 0 0 1-1 0V.5a.5.5 0 0 1 .5-.5zM3 14h10v-3H3v3zm0-4h10V7H3v3zm0-4h10V3H3v3z" />
+                    </svg>
+                    Your Library
+                </div>
+            </div>
+            <div class="sidebar-third-block">
+                <div>
+                    <i class="fa-solid fa-square-plus mr-2"></i>Create Playlist
+                </div>
+                <div><i class="fa-regular fa-heart mr-2"></i>Liked Songs
+                </div>
+            </div>
+            <div class="sidebar-bottom">
+                <div>Funky Heavy Bluesy</div>
+                <div>Your Top Songs 2020</div>
+                <div>In Love With You - Erykah Badu</div>
+                <div>This Is Rod Stewart</div>
+                <div>FRANCHISE With Young Thug</div>
+                <div>Your Top Songs 2019</div>
+                <div>Pallegio</div>
+                <div>This Is Joe Bonamassa</div>
+                <div>Jun19</div>
+                <div>Jack 30th Party2</div>
+                <div>Jack 30th Party</div>
+                <div>This Is Opeth</div>
+                <div>Metal Ballads</div>
+                <div>New Playlist</div>
+                <div>Your Top Songs 2018</div>
+                <div>Jazz Classics Blue Note Edition</div>
+                <div>
+                    <i class="fa-solid fa-circle-arrow-down"></i>
+                    Install App
+                </div>
+            </div>
+        </div>
+
+        <!-- main section -->
+        <div class="container-fluid artist-page-top d-flex flex-column justify-content-between">
+            <div class="d-flex flex-row justify-content-between pt-3 px-4 mb-5 sticky-top">
+                <div class="d-flex align-self-center">
+                    <i class="fa-solid fa-angle-left"></i>
+                    <i class="fa-solid fa-angle-right pl-4"></i>
+                </div>
+                <div class="dropdown d-flex">
+                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
+                        data-toggle="dropdown" aria-expanded="false">
+                        <img src="account.icon.jpeg" alt="account icon" class="img-fluid">
+                        guest
+                    </button>
+
+                    <!-- dropdown menu commenting out for now -->
+                    <!-- <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    <a class="dropdown-item" href="#">Action</a>
+                    <a class="dropdown-item" href="#">Another action</a>
+                    <a class="dropdown-item" href="#">Something else here</a>
+                </div> -->
+                </div>
+            </div>
+            <div class="front-elements">
+                <div class="pl-4 pt-5">
+                    <img src="verified-icon.jpeg" alt="verified icon" class="verified-icon">
+                    Verified Artist
+                </div>
+                <div class="pl-4">
+                    <h1 class="mb-0" id="mainTitle"></h1>
+                </div>
+                <div class="pt-2 pb-4 pl-4">
+                    27,311,222 monthly listeners
+                </div>
+                <div class="container-fluid artist-page-bottom d-flex flex-column py-4 px-4">
+                    <div class="d-flex align-items-center">
+                        <i class="fa-solid fa-pause d-flex align-items-center
+                        justify-content-center" id="bigPlayButton"></i>
+                        <button type="button" id="followButton" class="btn btn-dark d-inline-block d-flex align-items-center
+                        justify-content-center mx-4">FOLLOW</button>
+                        <h6 class="d-inline-block align-self-center">. . .</h6>
+                    </div>
+                    <div class="row py-3">
+                        <div class="col-12 col-md-12 col-lg-9 artist-page-bottom-left">
+                            <h5 class="pb-1">Popular</h5>
+                            <table class="table table-dark mb-2 popular">
+                                <tbody>
+                                    <tr class="py-2">
+                                        <th scope="row" class="py-1"><svg xmlns="http://www.w3.org/2000/svg" width="16"
+                                                height="16" fill="currentColor" class="bi bi-activity"
+                                                viewBox="0 0 16 16">
+                                                <path fill-rule="evenodd"
+                                                    d="M6 2a.5.5 0 0 1 .47.33L10 12.036l1.53-4.208A.5.5 0 0 1 12 7.5h3.5a.5.5 0 0 1 0 1h-3.15l-1.88 5.17a.5.5 0 0 1-.94 0L6 3.964 4.47 8.171A.5.5 0 0 1 4 8.5H.5a.5.5 0 0 1 0-1h3.15l1.88-5.17A.5.5 0 0 1 6 2Z" />
+                                            </svg></th>
+                                        <td class="py-2"><img src="queen-album1.jpeg" alt="album1 image"></td>
+                                        <td class="pl-0 py-2 track-1">Another One Bites The Dust - Remastered 2011</td>
+                                        <td class="py-2">1,000,334,567</td>
+                                        <td class="py-2 pr-2">3:34</td>
+                                    </tr>
+                                    <tr class="py-2">
+                                        <th scope="row" class="py-2">2</th>
+                                        <td class="py-2"><img src="queen-album2.jpeg" alt="album2 image"></td>
+                                        <td class="pl-0 py-2">Bohemian Rhapsody - Remastered 2011</td>
+                                        <td class="py-2">1,496,334,567</td>
+                                        <td class="py-2 pr-2">5:54</td>
+                                    </tr>
+                                    <tr class="py-2">
+                                        <th scope="row" class="py-2">3</th>
+                                        <td class="py-2"><img src="queen-album3.jpeg" alt="album3 image"></td>
+                                        <td class="pl-0 py-2">Don't Stop Me Now - Remastered 2011</td>
+                                        <td class="py-2">1,430,334,567</td>
+                                        <td class="py-2 pr-2">3:29</td>
+                                    </tr>
+                                    <tr class="py-2">
+                                        <th scope="row" class="py-2">4</th>
+                                        <td class="py-2"><img src="queen-album4.jpeg" alt="album4 image"></td>
+                                        <td class="pl-0 py-2">Under Pressure - Remastered 2011</td>
+                                        <td class="py-2">900,334,242</td>
+                                        <td class="py-2 pr-2">4:08</td>
+                                    </tr>
+                                    <tr class="py-2">
+                                        <th scope="row" class="py-2">5</th>
+                                        <td class="py-2"><img src="queen-album5.jpeg" alt="album5 image"></td>
+                                        <td class="pl-0 py-2">We Will Rock You - Remastered</td>
+                                        <td class="py-2">9,000,334</td>
+                                        <td class="py-2 pr-2">3:34</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <p>SEE MORE</p>
+                        </div>
+                        <div class="col-3 artist-page-bottom-right">
+                            <h5 class="pb-2">Artist pick</h5>
+                            <div class="d-flex">
+                                <div class="d-flex pr-3">
+                                    <img src="queen-album6.jpeg" alt="album6-image">
+                                </div>
+                                <div class="d-flex flex-column" id="veryright">
+                                    <div class="d-flex pb-1 artist-pick">
+                                        <img id='queen-icon' src="queen-icon.jpeg" alt="queen icon image" class="pr-1">
+                                        Posted By Queen
+                                    </div>
+                                    <div class="d-flex">Queen Best Of</div>
+                                    <div class="d-flex">Playlist</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row py-3">
+                        <div class="col-12 col-md-12 col-lg-9 artist-page-bottom-left">
+                            <h5 class="pb-1">Popular Releases</h5>
+                            <table class="table table-dark mb-2 popular-releases">
+                                <tbody>
+                                    <tr class="py-2">
+                                        <th scope="row" class="py-1"></th>
+                                        <td class="py-2"><img src="queen-album1.jpeg" alt="album1 image"></td>
+                                        <td class="pl-0 py-2 track-1">Another One Bites The Dust - Remastered 2011</td>
+                                        <td class="py-2">1,000,334,567</td>
+                                        <td class="py-2 pr-2">3:34</td>
+                                    </tr>
+                                    <tr class="py-2">
+                                        <th scope="row" class="py-2"></th>
+                                        <td class="py-2"><img src="queen-album2.jpeg" alt="album2 image"></td>
+                                        <td class="pl-0 py-2">Bohemian Rhapsody - Remastered 2011</td>
+                                        <td class="py-2">1,496,334,567</td>
+                                        <td class="py-2 pr-2">5:54</td>
+                                    </tr>
+                                    <tr class="py-2">
+                                        <th scope="row" class="py-2"></th>
+                                        <td class="py-2"><img src="queen-album3.jpeg" alt="album3 image"></td>
+                                        <td class="pl-0 py-2">Don't Stop Me Now - Remastered 2011</td>
+                                        <td class="py-2">1,430,334,567</td>
+                                        <td class="py-2 pr-2">3:29</td>
+                                    </tr>
+                                    <tr class="py-2">
+                                        <th scope="row" class="py-2"></th>
+                                        <td class="py-2"><img src="queen-album4.jpeg" alt="album4 image"></td>
+                                        <td class="pl-0 py-2">Under Pressure - Remastered 2011</td>
+                                        <td class="py-2">900,334,242</td>
+                                        <td class="py-2 pr-2">4:08</td>
+                                    </tr>
+                                    <tr class="py-2">
+                                        <th scope="row" class="py-2"></th>
+                                        <td class="py-2"><img src="queen-album5.jpeg" alt="album5 image"></td>
+                                        <td class="pl-0 py-2">We Will Rock You - Remastered</td>
+                                        <td class="py-2">9,000,334</td>
+                                        <td class="py-2 pr-2">3:34</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <p>SEE MORE</p>
+                        </div>
+                    </div>
+                    <div id="newLists" class="row py-3">
+
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer mt-auto py-3 d-flex justify-content-between align-items-center">
+        <div class="left-div ml-3 ml-md-0 ml-lg-3 d-flex align-items-center">
+            <div class="img-footer mr-3 mr-md-0 mr-lg-3"> <img src="queen-album1.jpeg" alt="playing track image"
+                    style="height: 45px;">
+            </div>
+            <div class="text-footer mr-5 mr-md-0 mr-lg-5 pt-0 pt-md-3 pt-lg-0">
+                <h6 class="footer-text">Another One Bites The Dust - Remastered 2011</h6>
+                <p>Artist</p>
+            </div>
+            <div class="heart-grid-icon"><i class="fa-solid fa-heart mr-3 footer-icon1" id="likeButton"></i>
+                <i class="fa-solid fa-table-cells-large footer-icon1"></i>
+            </div>
+        </div>
+        <div class="middle-div text-center">
+            <div class="d.flex icons align-items-center justify-content-center">
+                <i class="fa-solid fa-shuffle footer-icon1 mr-3"></i>
+                <i class="fa-solid fa-backward-step footer-icon2 mr-3"></i>
+                <i class="fa-solid fa-circle-pause mr-3 play" id="playButton"></i>
+                <i class="fa-solid fa-forward-step footer-icon2 mr-3"></i>
+                <i class="fa-solid fa-repeat footer-icon1"></i>
+
+            </div>
+            <div class="d-flex align-items-center">
+                <div class="number-play mr-2">0:12</div>
+                <div class="footer-play-bar">
+                    <div class="footer-stop"></div>
+                </div>
+                <div class="number-play ml-2">3:34</div>
+            </div>
+        </div>
+        <div class="right-div mr-5 d-flex align-items-center">
+            <div><i class="fa-solid fa-grip-lines mr-3 footer-icon1"></i></div>
+            <div><i class="fa-solid fa-desktop mr-3 footer-icon1"></i></div>
+            <div><i class="fa-solid fa-volume-high mr-3 footer-icon1"></i></div>
+            <div class="volume"></div>
+        </div>
+    </footer>
+
+
+    <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF"
+        crossorigin="anonymous"></script>
+
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.min.js" integrity="sha384-VHvPCCyXqtD5DqJeNxl2dtTyhF78xXNXdkwX1CZeRusQfRKp+tA7hAShOK/B/fQ2" crossorigin="anonymous"></script>
+    -->
+    <script src="https://kit.fontawesome.com/f62e77e0f6.js" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/ae2c658fe7.js" crossorigin="anonymous"></script>
+    <script>
+        let followButton = document.querySelector('#followButton')
+        followButton.addEventListener('click', function ()
+        {
+            if (followButton.innerText === 'FOLLOW')
+            {
+                followButton.innerText = 'FOLLOWING'
+            } else
+            {
+                followButton.innerText = 'FOLLOW'
+            }
+        })
+
+        let bigPlayButton = document.querySelector('#bigPlayButton')
+        bigPlayButton.addEventListener('click', function ()
+        {
+            bigPlayButton.classList.toggle("fa-play");
+        })
+
+        let playButton = document.querySelector('#playButton')
+        playButton.addEventListener('click', function ()
+        {
+            playButton.classList.toggle("fa-circle-play");
+        })
+
+        let likeButton = document.querySelector('#likeButton')
+        likeButton.addEventListener('click', function ()
+        {
+            likeButton.classList.toggle("text-success");
+        })
+
+
+
+
+
+
+
+        // homework M3D5
+        const mainTitle = document.getElementById('mainTitle')
+        const params = new URLSearchParams(window.location.search)
+        const id = params.get("id")
+        fetch("https://striveschool-api.herokuapp.com/api/deezer/artist/" + id)
+            .then((response) => response.json())
+            .then((data) =>
+            {
+                console.log(data)
+                mainTitle.innerText = data.name
+            })
+
+    </script>
+</body>
+
+</html>
