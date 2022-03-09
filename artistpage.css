@@ -50,7 +50,7 @@
 /* Artist page - main section - from here */
 .artist-page-top {
     width: 100%;
-    background-image: url('queen3.jpeg');
+    background-image: url('./artistpage-img/queen3.jpeg');
     object-position: center;
     object-fit: cover;
     position: relative;

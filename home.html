@@ -43,7 +43,7 @@
         }
 
         .left-sidebar div {
-            pp color: var(--text-dark);
+            color: var(--text-dark);
             font-size: 0.7rem;
         }
 
@@ -71,6 +71,11 @@
         .sidebar-second-block .slidebar-selected {
             background-color: #282828;
             border-radius: 3px;
+            color: white;
+        }
+
+        .search {
+            background-color: #282828;
             color: white;
         }
 
@@ -135,6 +140,8 @@
 
         .card {
             background: #171818;
+            margin-top: 1rem;
+            margin-bottom: 1rem;
         }
 
         .card1 {
@@ -343,8 +350,11 @@
             <div class="sidebar-second-block">
                 <div class="slidebar-selected"><i class="fa-solid fa-house mr-2"></i>
                     Home</div>
-                <div><i class="fa-solid fa-magnifying-glass mr-2"></i>
-                    Search</div>
+                <div>
+                    <!-- <i class="fa-solid fa-magnifying-glass mr-2"></i>Search -->
+                    <input type="text" id="search-query" class="search">
+                    <button onclick="fetchArtists()" class="search">Search</button>
+                </div>
                 <div><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                         class="bi bi-bookshelf mr-2" viewBox="0 0 16 16">
                         <path
@@ -383,7 +393,7 @@
                 </div>
             </div>
         </div>
-
+        <!-- main section -->
         <div class="container-fluid pl-5 pr-5">
             <div class="d-flex justify-content-between header">
                 <div class="icon"> <i class="fa-solid fa-circle-chevron-left mr-3 mt-3"></i><i
@@ -399,9 +409,9 @@
                 </div>
 
             </div>
-            <h3 class="mt-5 mb-4">Good Morning</h3> <button class="btn btn-primary my-1 mx-auto"
-                onclick="loadMusic()">Load Albuns</button>
-            <div class="row " id="card-Wrapper">
+            <h3 class="mt-5 mb-4">Good Morning</h3>
+            <!-- <button class="btn btn-primary my-1 mx-auto" onclick="loadMusic()">Load Albuns</button> -->
+            <div class="row mx-n2" id="card-Wrapper">
             </div>
 
 
@@ -414,7 +424,7 @@
                     <p class="mt-5 mb-4 see" style="vertical-align: bottom;">SEE ALL</p>
                 </div>
             </div>
-            <button class="btn btn-primary my-1 mx-auto" onclick="loadMusic2()">Load Albuns</button>
+            <!-- <button class="btn btn-primary my-1 mx-auto" onclick="loadMusic2()">Load Albuns</button> -->
             <div class="row" id="secondCard-wrapper">
             </div>
             <div class="d-flex justify-content-between align-items-end">
@@ -426,7 +436,7 @@
                     <p class="mt-5 mb-4 see" style="vertical-align: bottom;">SEE ALL</p>
                 </div>
             </div>
-            <button class="btn btn-primary my-1 mx-auto" onclick="loadMusic3()">Load Albuns</button>
+            <!-- <button class="btn btn-primary my-1 mx-auto" onclick="loadMusic3()">Load Albuns</button> -->
             <div class="row" id="secondCard-wrapper">
 
                 <div class="row" id="thirdRow-wrapper">
@@ -473,105 +483,154 @@
 
     <script>
 
-        function playButton(x) {
+        function playButton(x)
+        {
             x.classList.toggle("fa-circle-stop");
         }
 
 
-        function likeButton(x) {
+        function likeButton(x)
+        {
             x.classList.toggle("text-success");
         }
 
-        const cardWrapper = document.querySelector("#card-Wrapper")
-        function loadMusic() {
-            fetch("https://striveschool-api.herokuapp.com/api/deezer/search?q=eminem")
-                .then(response => {
-                    return response.json()
-                })
-                .then(musics => {
-                    console.log(musics)
-                    console.log(musics.data)
-                    cardWrapper.innerHTML = musics.data
-                        .map(
-                            (music) =>
-                                `   <div class="col">
-                    <div class="card second-card-row">
-                        <a href="./albumpage.html?id=${music.album.id}"><img src=${music.album.cover} alt="album1.jpg" 
-                        <div class="card-body">
-                            <h5 class="card-title">${music.album.title}</h5>
-                            <p class="card-text">${music.title}z</p>
+        window.onload = () =>
+        {
+            fetchArtists()
+        }
 
-                        </div>
-                    </div>
-                </div>
-                   `
-                        )
-                        .join("")
-                })
-                .catch(error => {
-                    console.error(error)
+        const cardWrapper = document.querySelector('#card-Wrapper')
+        const searchQuery = document.querySelector('#search-query')
+
+        function fetchArtists()
+        {
+            fetch(`https://striveschool-api.herokuapp.com/api/deezer/search?q=${searchQuery.value || 'eminem'}`)
+                .then(r => r.json())
+                .then(displayArtists)
+                .catch(err =>
+                {
+                    console.log(err)
                 })
         }
-        const secondCardWrapper = document.querySelector("#secondCard-wrapper")
-        function loadMusic2() {
-            fetch("https://striveschool-api.herokuapp.com/api/deezer/search?q=metallica")
-                .then(response => {
-                    return response.json()
-                })
-                .then(musics => {
-                    console.log(musics)
-                    console.log(musics.data)
-                    secondCardWrapper.innerHTML = musics.data
-                        .map(
-                            (music) =>
-                                `   <div class="col">
-                    <div class="card second-card-row">
-                        <a href="./albumpage.html?id=${music.album.id}"><img src=${music.album.cover} alt="album1.jpg" 
-                        <div class="card-body">
-                            <h5 class="card-title">${music.album.title}</h5>
-                            <p class="card-text">${music.title}z</p>
-
-                        </div>
-                    </div>
-                </div>
-                   `
-                        )
-                        .join("")
-                })
-                .catch(error => {
-                    console.error(error)
-                })
+        function displayArtists(albums)
+        {
+            // console.log(albums.data)
+            const cardStr = albums.data.map(album =>
+                `
+                    <div class="card col-md-3 col-lg-2 mx-2">
+                      <a href='./albumpage.html?id=${album.album.id}' ><img src="${album.album.cover}" class="card-img-top img-fluid" alt="..."></a>
+                      <div class="card-body">
+                        <a href='./albumpage.html?id=${album.album.id}' class="card-text">${album.title}</a>
+                        <a href='./artistpage.html?id=${album.artist.id}' class="card-text">${album.artist.name}</a>
+                      </div>
+                    </div>`
+            )
+            cardWrapper.innerHTML = cardStr.join('')
         }
-        const thirdCardWrapper = document.querySelector("#thirdRow-wrapper")
-        function loadMusic3() {
-            fetch("https://striveschool-api.herokuapp.com/api/deezer/search?q=behemoth")
-                .then(response => {
-                    return response.json()
-                })
-                .then((musics) => {
-                    console.log(musics)
-                    console.log(musics.data)
-                    thirdCardWrapper.innerHTML = musics.data
-                        .map(
-                            (music) =>
-                                `   <div class="col">
-                    <div class="card second-card-row">
-                        <a href="./albumpage.html?id=${music.album.id}"><img src=${music.album.cover} alt="album1.jpg" 
-                        <div class="card-body">
-                            <h5 class="card-title">${music.album.title}</h5>
-                            <p class="card-text">${music.title}z</p>
 
-                        </div>
-                    </div>
-                </div>
-                   `
-                        )
-                        .join("")
-                })
-                .catch(error => {
-                    console.error(error)
-                })
-        }
+// this is what we did with Maria and Ana
+        // const cardWrapper = document.querySelector("#card-Wrapper")
+        // function loadMusic()
+        // {
+        //     fetch("https://striveschool-api.herokuapp.com/api/deezer/search?q=eminem")
+        //         .then(response =>
+        //         {
+        //             return response.json()
+        //         })
+        //         .then(musics =>
+        //         {
+        //             console.log(musics)
+        //             console.log(musics.data)
+        //             cardWrapper.innerHTML = musics.data
+        //                 .map(
+        //                     (music) =>
+        //                         `   <div class="col">
+        //             <div class="card second-card-row">
+        //                 <a href="./albumpage.html?id=${music.album.id}"><img src=${music.album.cover} alt="album1.jpg"
+        //                 <div class="card-body">
+        //                     <h5 class="card-title">${music.album.title}</h5>
+        //                     <p class="card-text">${music.title}z</p>
+
+        //                 </div>
+        //             </div>
+        //         </div>
+        //            `
+        //                 )
+        //                 .join("")
+        //         })
+        //         .catch(error =>
+        //         {
+        //             console.error(error)
+        //         })
+        // }
+        // const secondCardWrapper = document.querySelector("#secondCard-wrapper")
+        // function loadMusic2()
+        // {
+        //     fetch("https://striveschool-api.herokuapp.com/api/deezer/search?q=metallica")
+        //         .then(response =>
+        //         {
+        //             return response.json()
+        //         })
+        //         .then(musics =>
+        //         {
+        //             console.log(musics)
+        //             console.log(musics.data)
+        //             secondCardWrapper.innerHTML = musics.data
+        //                 .map(
+        //                     (music) =>
+        //                         `   <div class="col">
+        //             <div class="card second-card-row">
+        //                 <a href="./albumpage.html?id=${music.album.id}"><img src=${music.album.cover} alt="album1.jpg"
+        //                 <div class="card-body">
+        //                     <h5 class="card-title">${music.album.title}</h5>
+        //                     <p class="card-text">${music.title}z</p>
+
+        //                 </div>
+        //             </div>
+        //         </div>
+        //            `
+        //                 )
+        //                 .join("")
+        //         })
+        //         .catch(error =>
+        //         {
+        //             console.error(error)
+        //         })
+        // }
+        // const thirdCardWrapper = document.querySelector("#thirdRow-wrapper")
+        // function loadMusic3()
+        // {
+        //     fetch("https://striveschool-api.herokuapp.com/api/deezer/search?q=behemoth")
+        //         .then(response =>
+        //         {
+        //             return response.json()
+        //         })
+        //         .then((musics) =>
+        //         {
+        //             console.log(musics)
+        //             console.log(musics.data)
+        //             thirdCardWrapper.innerHTML = musics.data
+        //                 .map(
+        //                     (music) =>
+        //                         `   <div class="col">
+        //             <div class="card second-card-row">
+        //                 <a href="./albumpage.html?id=${music.album.id}"><img src=${music.album.cover} alt="album1.jpg"
+        //                 <div class="card-body">
+        //                     <h5 class="card-title">${music.album.title}</h5>
+        //                     <p class="card-text">${music.title}z</p>
+
+        //                 </div>
+        //             </div>
+        //         </div>
+        //            `
+        //                 )
+        //                 .join("")
+        //         })
+        //         .catch(error =>
+        //         {
+        //             console.error(error)
+        //         })
+        // }
     </script>
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
         integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
